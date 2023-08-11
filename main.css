@@ -1,0 +1,1161 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+/* *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+} */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    background-color: orange;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Ajusta el tamaño del logo según tus necesidades */
+    align-items: center;
+    padding: 15px 10px;
+    text-align: center;
+}
+
+.contenido h1{
+    font-size: 2rem;
+    text-align: center;
+}
+.contenido p{
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.contenido .fecha{
+    padding-top: 8rem;
+}
+
+.data h1{
+    text-align: center;
+    padding-top: 4rem;
+}
+
+.data p{
+    font-size: 1.2rem;
+    text-align: center;
+}
+.resaltado {
+    position: relative;
+    color: orange;
+    font-weight: bold;
+    text-decoration: underline;
+    
+}
+
+/* Agrega estilos para el contenedor de la imagen */
+.image {
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    justify-content: flex-start; /* Alinea los elementos en la parte superior */
+    align-items: center; /* Centra horizontalmente */
+    height: 100vh; /* Ajusta la altura según tus necesidades */
+    position: relative;
+}
+
+.image img {
+    max-width: 180px; /* Cambia este valor según tus preferencias para reducir el tamaño */
+    height: auto; /* Mantén la proporción de aspecto original */
+    box-shadow: 0px 10px 50px rgba(224, 224, 224, 0.3);
+    margin-bottom: 20px; 
+}
+
+
+/* Estilos para el botón */
+.btn {
+    text-align: center;
+    /* Ajusta el espaciado superior según tus preferencias */
+}
+
+.btn button {
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 20px; /* Puntas redondeadas */
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    animation: moveButton 2s infinite alternate; 
+    box-shadow: 0px 10px 20px rgba(238, 115, 14, 0.2)
+}
+
+@keyframes moveButton {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px); /* Ajusta la distancia y dirección del movimiento */
+    }
+}
+
+.overlay{
+     background: rgba(0,0,0,.6);
+     position: fixed;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     visibility: hidden;
+}
+
+.overlay.active{
+    visibility: visible;
+}
+
+.popup{
+    background: #e7a62e;
+    box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 0.925);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    
+    opacity: 0;
+    transition: .5s ease all;
+    transform: scale(0.7);
+
+}
+
+.btn-cerrar-popup{
+    font-size: 16px;
+    line-height: 16px;
+    display: block;
+    text-align: right;
+    color: #fff;
+    transition: .3s ease all;
+}
+
+.btn-cerrar-popup:hover {
+    color: #000;
+}
+
+.popup h3{
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: -23px;
+    opacity: 0;
+}
+
+.popup h4{
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 50px;
+    opacity: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.popup form .contenedor-inputs{
+    opacity: 0;
+}
+
+.popup form .contenedor-inputs input{
+   width: 100%; 
+   margin-bottom: 20px;
+   height: 52px;
+   line-height: 57px;
+   font-size: 18px;
+   text-align: center;
+   border-radius: 30px;
+   font-family: 'Poppins', sans-serif;
+   border: 2px solid #000;
+}
+
+.popup form .btn-submit{
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    color: #ffffff;
+    background: #000000;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s ease all;
+}
+
+.popup form .btn-submit:hover{
+    background: #f1691b;
+}
+
+.popup.active{opacity: 1; transform: scale(1);}
+.popup.active h3{ animation: entradaTitulo .8s ease .6s forwards; }
+.popup.active h4{ animation: entradaSubTitulo .8s ease .8s forwards; }
+.popup.active .contenedor-inputs{ animation: entradaInputs 1s ease 1s forwards; }
+
+ @keyframes entradaTitulo {
+    from {
+        transform: translateY(-25px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+ }
+
+ @keyframes entradaSubTitulo {
+    from {
+        transform: translateY(25px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+ }
+
+ @keyframes entradaInputs {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+ }
+
+ .texto-adicional {
+    padding-top: 150px;
+    padding: 30px;
+    text-align: start;
+ }
+
+ .resaltado1{
+    color: #f1691b;
+ }
+
+ .btn-fixed{
+    text-align: center; 
+ }
+
+ .btn-fixed button{
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 20px; /* Puntas redondeadas */
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    animation: pulse 5s infinite; /* Nueva animación "pulse" */
+    box-shadow: 0px 10px 20px rgba(238, 115, 14, 0.2)
+ }
+ /* Nueva animación "pulse" */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+ .overlay2{
+    background: rgba(0,0,0,.6);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.overlay2.active{
+   visibility: visible;
+}
+
+.popup2{
+   background: #e7a62e;
+   box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 0.925);
+   border-radius: 20px;
+   padding: 20px;
+   text-align: center;
+   
+   opacity: 0;
+   transition: .5s ease all;
+   transform: scale(0.7);
+
+}
+
+.btn-cerrar-popup2{
+   font-size: 16px;
+   line-height: 16px;
+   display: block;
+   text-align: right;
+   color: #fff;
+   transition: .3s ease all;
+}
+
+.btn-cerrar-popup2:hover {
+   color: #000;
+}
+
+.popup2 h3{
+   font-size: 32px;
+   font-weight: 600;
+   margin-bottom: -23px;
+   opacity: 0;
+}
+
+.popup2 h4{
+   font-size: 23px;
+   font-weight: 600;
+   margin-bottom: 50px;
+   opacity: 0;
+   font-family: 'Montserrat', sans-serif;
+}
+
+.popup2 form .contenedor-inputs2{
+   opacity: 0;
+}
+
+.popup2 form .contenedor-inputs2 input{
+  width: 100%; 
+  margin-bottom: 20px;
+  height: 52px;
+  line-height: 57px;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 30px;
+  font-family: 'Poppins', sans-serif;
+  border: 2px solid #000;
+}
+
+.popup2 form .btn-submit2{
+   padding: 0 20px;
+   height: 40px;
+   line-height: 40px;
+   border: none;
+   color: #ffffff;
+   background: #000000;
+   font-family: 'Poppins', sans-serif;
+   text-transform: uppercase;
+   border-radius: 30px;
+   font-size: 16px;
+   cursor: pointer;
+   transition: .3s ease all;
+}
+
+.popup2 form .btn-submit2:hover{
+   background: #f1691b;
+}
+
+.popup2.active{opacity: 1; transform: scale(1);}
+.popup2.active h3{ animation: entradaTitulo .8s ease .6s forwards; }
+.popup2.active h4{ animation: entradaSubTitulo .8s ease .8s forwards; }
+.popup2.active .contenedor-inputs2{ animation: entradaInputs 1s ease 1s forwards; }
+
+@keyframes entradaTitulo {
+   from {
+       transform: translateY(-25px);
+       opacity: 0;
+   }
+   to {
+       transform: translateY(0);
+       opacity: 1;
+   }
+}
+
+@keyframes entradaSubTitulo {
+   from {
+       transform: translateY(25px);
+       opacity: 0;
+   }
+   to {
+       transform: translateY(0);
+       opacity: 1;
+   }
+}
+
+@keyframes entradaInputs {
+   from {
+       opacity: 0;
+   }
+
+   to {
+       opacity: 1;
+   }
+}
+
+
+/* Estilos para el contenedor de la imagen */
+.image2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh; /* Ajusta la altura según tus necesidades */
+    position: relative;
+}
+
+.image2 img {
+    max-width: 450px; /* Cambia este valor para ajustar el tamaño de la imagen */
+    height: auto;
+    /* box-shadow: 0px 10px 50px rgba(255, 255, 255, 0.185); */
+    padding-top: 90px;
+}
+
+
+
+
+.subrayado {
+    text-decoration: underline #f1691b;
+}
+
+.recuadro h2 {
+    margin-bottom: 10px;
+    text-align:center;
+}
+
+.recuadro ul {
+    margin-bottom: 5px;
+    /* text-align: center; */
+}
+
+
+
+.btn-fixed1{
+    text-align: center; 
+    padding-top: 60px;
+ }
+
+ .btn-fixed1 button{
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 20px; /* Puntas redondeadas */
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    animation: pulse 5s infinite; /* Nueva animación "pulse" */
+    box-shadow: 0px 10px 20px rgba(238, 115, 14, 0.2)
+ }
+ /* Nueva animación "pulse" */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+ .overlay3{
+    background: rgba(0,0,0,.6);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.overlay3.active{
+   visibility: visible;
+}
+
+.popup3{
+   background: #e7a62e;
+   box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 0.925);
+   border-radius: 20px;
+   padding: 20px;
+   text-align: center;
+   
+   opacity: 0;
+   transition: .5s ease all;
+   transform: scale(0.7);
+
+}
+
+.btn-cerrar-popup3{
+   font-size: 16px;
+   line-height: 16px;
+   display: block;
+   text-align: right;
+   color: #fff;
+   transition: .3s ease all;
+}
+
+.btn-cerrar-popup3:hover {
+   color: #000;
+}
+
+.popup3 h3{
+   font-size: 32px;
+   font-weight: 600;
+   margin-bottom: -23px;
+   opacity: 0;
+}
+
+.popup3 h4{
+   font-size: 23px;
+   font-weight: 600;
+   margin-bottom: 50px;
+   opacity: 0;
+   font-family: 'Montserrat', sans-serif;
+}
+
+.popup3 form .contenedor-inputs3{
+   opacity: 0;
+}
+
+.popup3 form .contenedor-inputs3 input{
+  width: 100%; 
+  margin-bottom: 20px;
+  height: 52px;
+  line-height: 57px;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 30px;
+  font-family: 'Poppins', sans-serif;
+  border: 2px solid #000;
+}
+
+.popup3 form .btn-submit3{
+   padding: 0 20px;
+   height: 40px;
+   line-height: 40px;
+   border: none;
+   color: #ffffff;
+   background: #000000;
+   font-family: 'Poppins', sans-serif;
+   text-transform: uppercase;
+   border-radius: 30px;
+   font-size: 16px;
+   cursor: pointer;
+   transition: .3s ease all;
+}
+
+.popup3 form .btn-submit3:hover{
+   background: #f1691b;
+}
+
+.popup3.active{opacity: 1; transform: scale(1);}
+.popup3.active h3{ animation: entradaTitulo .8s ease .6s forwards; }
+.popup3.active h4{ animation: entradaSubTitulo .8s ease .8s forwards; }
+.popup3.active .contenedor-inputs3{ animation: entradaInputs 1s ease 1s forwards; }
+
+@keyframes entradaTitulo {
+   from {
+       transform: translateY(-25px);
+       opacity: 0;
+   }
+   to {
+       transform: translateY(0);
+       opacity: 1;
+   }
+}
+
+@keyframes entradaSubTitulo {
+   from {
+       transform: translateY(25px);
+       opacity: 0;
+   }
+   to {
+       transform: translateY(0);
+       opacity: 1;
+   }
+}
+
+@keyframes entradaInputs {
+   from {
+       opacity: 0;
+   }
+
+   to {
+       opacity: 1;
+   }
+}
+
+.texto-juan h2{
+    padding: 10px 20px;
+}
+
+.texto-juan p{
+    padding: 10px 20px;
+}
+
+.texto-juan span{
+    color: #f1691b;
+}
+
+.foto-juan {
+    display: block;
+    margin: 0 auto; /* Centra horizontalmente */
+    max-width: 300px; /* Ajusta el tamaño máximo según tus preferencias */
+    height: auto; /* Mantén la proporción de aspecto original */
+    box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 0.836);
+}
+
+.texto-juan h2{
+    text-align: center;
+    padding: 10 20px;
+}
+
+.texto-juan span{
+    color: #f1691b;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.countdown span {
+    display: inline-block;
+    margin: 0 10px; /* Agrega espaciado horizontal entre los números */
+    font-family: 'Poppins', sans-serif;
+    padding: 1px;
+    padding-inline: 5px;
+}
+
+.cont-temporizador{
+   display: flex; 
+   justify-content: center;
+   margin-top: -30px;
+}
+
+.cont-temporizador .bloque{
+    margin: 0px 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cont-temporizador .bloque div{
+   display: flex; 
+   justify-content: center;
+   align-items: center;
+   background-color: rgb(80,80,80);
+   box-shadow: 0px 0px 6px 2px #727272 inset;
+   color: #ffffff;
+   font-size: 35px;
+   font-weight: bold;
+   width: 100px;
+   height: 70px;
+   margin-bottom: 10px;
+   border-radius: 5px;
+}
+
+.cont-temporizador .bloque p{
+    font-size: 11px;
+    font-weight: bold;
+    color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+/* Para pantallas pequeñas (hasta 768px de ancho) */
+@media screen and (max-width: 768px) {
+    .contenido .fecha {
+        padding-top: 4rem;
+    }
+
+    .image {
+        height: 50vh;
+    }
+
+    .image img {
+        max-width: 300px;
+    }
+
+    .btn {
+        margin-top: -15rem;
+    }
+
+    .popup2 {
+        padding: 10px;
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .popup2 h3,
+    .popup2 h4,
+    .popup2 form .contenedor-inputs2 {
+        opacity: 1;
+    }
+
+    .popup2 form .contenedor-inputs2 input {
+        width: 100%;
+        margin-bottom: 15px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .popup2 form .btn-submit2 {
+        height: 35px;
+        line-height: 35px;
+        font-size: 14px;
+    }
+
+    .image img,
+    .image2 img {
+        max-width: 80%; /* Cambia el valor según tus preferencias para reducir el tamaño */
+    }
+
+    .btn-fixed1 {
+        padding-top: 30px;
+    }
+
+    .btn-fixed1 button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .popup3 {
+        transform: scale(0.9);
+        padding: 15px;
+    }
+
+    .popup3 h3,
+    .popup3 h4 {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .popup3 form .contenedor-inputs3 input {
+        font-size: 16px;
+        height: 40px;
+        line-height: 45px;
+    }
+
+    .popup3 form .btn-submit3 {
+        padding: 0 15px;
+        height: 36px;
+        line-height: 36px;
+        font-size: 14px;
+    }
+
+    .texto-juan h2,
+    .texto-juan p {
+        padding: 10px 15px;
+    }
+
+    .texto-juan h2 {
+        font-size: 22px;
+    }
+
+    .foto-juan {
+        max-width: 250px;
+    }
+
+    .countdown {
+        font-size: 1.2rem;
+    }
+
+    .countdown span {
+        font-size: 1rem;
+    }
+
+    .cont-temporizador {
+        margin-top: -20px;
+    }
+
+    .cont-temporizador .bloque div {
+        font-size: 28px;
+        width: 80px;
+        height: 50px;
+    }
+
+    .cont-temporizador .bloque p {
+        font-size: 10px;
+    }
+}
+
+
+@media screen and (max-width: 576px) { 
+    
+    .contenido h1 {
+        font-size: 2rem;
+    }
+
+    .contenido p {
+        font-size: 1rem;
+    }
+
+    .data h1 {
+        padding-top: 2rem;
+    }
+
+    .data p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        margin-top: -10rem;
+    }
+
+    .overlay {
+        background: rgba(0, 0, 0, 0.8);
+    }
+}
+
+
+@media screen and (min-width: 390px) {
+    .header {
+        padding: 10px 20px; /* Ajusta el padding del encabezado */
+    }
+
+    .logo{
+        padding: auto;
+       
+    }
+    
+    /* Contenido */
+    .contenido h1 {
+        font-size: 1.4rem; /* Ajusta el tamaño del título */
+    }
+    
+    .contenido p {
+        font-size: 1.1rem; /* Ajusta el tamaño del párrafo */
+    }
+    
+    /* Fecha en el contenido */
+    .contenido .fecha {
+        padding-top: 3rem; /* Ajusta el padding superior */
+    }
+    
+    /* Datos */
+    .data h1 {
+        font-size: 1.6rem; /* Ajusta el tamaño del título */
+        padding: 10px 20px;
+    }
+    
+    .data p {
+        font-size: 1.4rem; /* Ajusta el tamaño del párrafo */
+    }
+    
+    /* Texto resaltado */
+    .resaltado {
+        font-size: 1.4rem; /* Ajusta el tamaño del texto resaltado */
+    }
+
+    .image {
+        display: flex;
+        flex-direction: column; /* Apila los elementos verticalmente */
+        justify-content: flex-start; /* Alinea los elementos en la parte superior */
+        align-items: center; /* Centra horizontalmente */
+        height: 100vh; /* Ajusta la altura según tus necesidades */
+        position: relative;
+    }
+    
+    .image img {
+        max-width: 350px; /* Cambia este valor según tus preferencias para reducir el tamaño */
+        height: auto; /* Mantén la proporción de aspecto original */
+        box-shadow: 0px 10px 50px rgba(224, 224, 224, 0.3);
+        margin-bottom: 20px; 
+    }
+
+    .btn {
+        text-align: center;
+        margin-top: -370px; /* Ajusta el espaciado superior según tus preferencias */
+        align-items: center;
+    }
+    
+    .btn button {
+        background-color: orange;
+        color: white;
+        border: none;
+        border-radius: 20px; /* Puntas redondeadas */
+        padding: 10px 20px;
+        font-size: 0.9rem; /* Ajusta el tamaño de la fuente para pantallas pequeñas */
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+        animation: moveButton 2s infinite alternate; 
+        box-shadow: 0px 5px 10px rgba(238, 115, 14, 0.2);
+    }
+
+    /* Estilos para la superposición */
+.overlay,
+.overlay2,
+.overlay3 {
+    background: rgba(0,0,0,.6);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.overlay.active,
+.overlay2.active,
+.overlay3.active {
+    visibility: visible;
+}
+
+/* Estilos para el popup */
+.popup, 
+.popup2,
+.popup3 {
+    background: #e7a62e;
+    box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 0.925);
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+
+    opacity: 0;
+    transition: .5s ease all;
+    transform: scale(0.7);
+    max-width: 300px; /* Limita el ancho del popup para evitar que ocupe toda la pantalla */
+    margin: 0 auto; /* Centra horizontalmente */
+}
+
+.btn-cerrar-popup{
+    font-size: 16px;
+    line-height: 16px;
+    display: block;
+    text-align: right;
+    color: #fff;
+    transition: .3s ease all;
+}
+
+.btn-cerrar-popup:hover {
+    color: #000;
+}
+
+.popup,
+.popup2,
+.popup3 h3 {
+    font-size: 24px; /* Reduce el tamaño del título */
+    font-weight: 600;
+    margin-bottom: 10px;
+    opacity: 0;
+}
+
+.popup,
+.popup2,
+.popup3 h4 {
+    font-size: 18px; /* Reduce el tamaño del subtítulo */
+    font-weight: 600;
+    margin-bottom: 30px;
+    opacity: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.popup form .contenedor-inputs {
+    opacity: 0;
+}
+
+.popup form .contenedor-inputs input {
+    width: 100%;
+    margin-bottom: 10px; /* Reduce el espaciado entre los inputs */
+    height: 40px; /* Reduzca la altura del input */
+    line-height: 45px; /* Ajusta la altura de línea del input */
+    font-size: 14px; /* Reduce el tamaño del texto del input */
+    text-align: center;
+    border-radius: 20px; /* Reduzca el radio del borde */
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid #000;
+}
+
+.popup form .btn-submit {
+    padding: 0 15px; /* Reduce el espaciado horizontal */
+    height: 30px; /* Reduzca la altura del botón */
+    line-height: 30px; /* Ajusta la altura de línea del botón */
+    border: none;
+    color: #ffffff;
+    background: #000000;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    border-radius: 15px; /* Reduzca el radio del borde */
+    font-size: 12px; /* Reduce el tamaño del texto del botón */
+    cursor: pointer;
+    transition: .3s ease all;
+}
+
+.popup form .btn-submit:hover {
+    background: #f1691b;
+}
+
+.popup.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.popup.active h3 { animation: entradaTitulo .8s ease .6s forwards; }
+.popup.active h4 { animation: entradaSubTitulo .8s ease .8s forwards; }
+.popup.active .contenedor-inputs { animation: entradaInputs 1s ease 1s forwards; }
+
+.image2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto; /* Ajusta la altura automáticamente */
+    padding: 20px 0; /* Agrega un poco de espacio en la parte superior e inferior */
+    position: relative;
+}
+
+.image2 img {
+    max-width: 100%; /* La imagen ocupará todo el ancho disponible */
+    height: auto; /* Mantén la proporción de aspecto original */
+    box-shadow: 0px 10px 13px rgba(224, 224, 224, 0.205);
+    padding-top: 30px; /* Ajusta el espaciado superior de la imagen */
+}
+
+.subrayado {
+    text-decoration: underline #f1691b;
+}
+
+.recuadro h2 {
+    margin-bottom: 5px; /* Reduzco el margen inferior para ahorrar espacio */
+    text-align: center;
+    font-size: 1.4rem; /* Ajusto el tamaño de fuente para una mejor legibilidad */
+}
+
+.recuadro ul {
+    margin-bottom: 5px;
+    padding: 10px 20px;
+    text-align: start;
+}
+
+.btn-fixed{
+    text-align: center; 
+    margin-top: 20px; /* Agrego margen superior para separar del contenido */
+    
+}
+
+.btn-fixed button{
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 20px; /* Puntas redondeadas */
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    animation: pulse 5s infinite; /* Nueva animación "pulse" */
+    box-shadow: 0px 10px 20px rgba(238, 115, 14, 0.2);
+    display: block; /* Hago que el botón sea un bloque para que ocupe todo el ancho disponible */
+    margin: 0 auto; /* Centro horizontalmente */
+    text-decoration: solid;
+}
+
+.texto-juan h2{
+    text-align: center;
+    padding: 10px; /* Cambio de 20px a 10px en el padding horizontal */
+    font-size: 1.5rem; /* Reduzco el tamaño de fuente para pantallas pequeñas */
+    padding-top: 180px;
+}
+
+.texto-juan p{
+    padding: 10px 20px;
+    font-size: 1rem; /* Reduzco el tamaño de fuente para pantallas pequeñas */
+}
+
+.texto-juan span{
+    color: #f1691b;
+}
+
+.foto-juan {
+    display: block;
+    margin: 0 auto; /* Centra horizontalmente */
+    max-width: 320px; /* Ajusto el tamaño máximo para pantallas pequeñas */
+    height: auto; /* Mantén la proporción de aspecto original */
+    box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 0.836);
+}
+
+
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem; /* Reduzco el tamaño de fuente para pantallas pequeñas */
+    color: white;
+    margin-top: 20px; /* Añado margen superior para separar del contenido superior */
+}
+
+.countdown span {
+    display: inline-block;
+    margin: 0 5px; /* Reduzco el espaciado horizontal entre los números */
+    font-family: 'Poppins', sans-serif;
+    padding: 1px;
+    padding-inline: 3px; /* Reduzco el espaciado interior */
+}
+
+.cont-temporizador{
+   display: flex; 
+   justify-content: center;
+   margin-top: -20px; /* Ajusto el margen superior */
+}
+
+.cont-temporizador .bloque{
+    margin: 0px 2px; /* Reduzco el margen entre bloques */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cont-temporizador .bloque div{
+   display: flex; 
+   justify-content: center;
+   align-items: center;
+   background-color: rgb(80,80,80);
+   box-shadow: 0px 0px 6px 2px #727272 inset;
+   color: #ffffff;
+   font-size: 25px; /* Reduzco el tamaño de fuente para pantallas pequeñas */
+   font-weight: bold;
+   width: 70px; /* Reduzco el ancho del bloque */
+   height: 50px; /* Reduzco la altura del bloque */
+   margin-bottom: 5px; /* Reduzco el margen inferior */
+   border-radius: 5px;
+}
+
+.cont-temporizador .bloque p{
+    font-size: 9px; /* Reduzco el tamaño de fuente para pantallas pequeñas */
+    font-weight: bold;
+    color: #000;
+}
+
+}
