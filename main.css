@@ -963,8 +963,8 @@ body {
     color: #000;
 }
 
-.popup,
-.popup2,
+.popup h3,
+.popup2 h3,
 .popup3 h3 {
     font-size: 24px; /* Reduce el tamaño del título */
     font-weight: 600;
@@ -972,10 +972,10 @@ body {
     opacity: 0;
 }
 
-.popup,
-.popup2,
+.popup h4,
+.popup2 h4,
 .popup3 h4 {
-    font-size: 18px; /* Reduce el tamaño del subtítulo */
+    font-size: 15px; /* Reduce el tamaño del subtítulo */
     font-weight: 600;
     margin-bottom: 30px;
     opacity: 0;
@@ -986,20 +986,26 @@ body {
     opacity: 0;
 }
 
-.popup form .contenedor-inputs input {
+.popup form .contenedor-inputs input,
+.popup2 form .contenedor-inputs input,
+.popup3 form .contenedor-inputs input {
     width: 100%;
     margin-bottom: 10px; /* Reduce el espaciado entre los inputs */
     height: 40px; /* Reduzca la altura del input */
     line-height: 45px; /* Ajusta la altura de línea del input */
-    font-size: 14px; /* Reduce el tamaño del texto del input */
+    font-size: 13px; /* Reduce el tamaño del texto del input */
     text-align: center;
-    border-radius: 20px; /* Reduzca el radio del borde */
+    border-radius: 15px; /* Reduzca el radio del borde */
     font-family: 'Poppins', sans-serif;
     border: 2px solid #000;
+    align-items: center;
+    padding: 6px -4px;
 }
 
+
+
 .popup form .btn-submit {
-    padding: 0 15px; /* Reduce el espaciado horizontal */
+    padding: 0 12px; /* Reduce el espaciado horizontal */
     height: 30px; /* Reduzca la altura del botón */
     line-height: 30px; /* Ajusta la altura de línea del botón */
     border: none;
