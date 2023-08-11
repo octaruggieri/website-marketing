@@ -946,7 +946,7 @@ body {
     opacity: 0;
     transition: .5s ease all;
     transform: scale(0.7);
-    max-width: 300px; /* Limita el ancho del popup para evitar que ocupe toda la pantalla */
+    width: 330px; /* Limita el ancho del popup para evitar que ocupe toda la pantalla */
     margin: 0 auto; /* Centra horizontalmente */
 }
 
