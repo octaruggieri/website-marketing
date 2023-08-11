@@ -980,6 +980,7 @@ body {
     margin-bottom: 30px;
     opacity: 0;
     font-family: 'Montserrat', sans-serif;
+    text-align: center;
 }
 
 .popup form .contenedor-inputs {
@@ -991,15 +992,17 @@ body {
 .popup3 form .contenedor-inputs input {
     width: 100%;
     margin-bottom: 10px; /* Reduce el espaciado entre los inputs */
-    height: 40px; /* Reduzca la altura del input */
-    line-height: 45px; /* Ajusta la altura de línea del input */
+    height: 30px; /* Reduzca la altura del input */
+    line-height: 20px; /* Ajusta la altura de línea del input */
     font-size: 13px; /* Reduce el tamaño del texto del input */
     text-align: center;
-    border-radius: 15px; /* Reduzca el radio del borde */
+    border-radius: 25px; /* Reduzca el radio del borde */
     font-family: 'Poppins', sans-serif;
     border: 2px solid #000;
     align-items: center;
-    padding: 6px -4px;
+    display: block;
+    align-content: center;
+    padding-right: -300px;
 }
 
 
