@@ -685,7 +685,28 @@ body {
 
 
 
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: #25d366;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
 
+.whatsapp-button a {
+    text-decoration: none;
+}
+
+.whatsapp-button i {
+    font-size: 24px;
+}
 
 
 
@@ -1167,4 +1188,303 @@ body {
     color: #000;
 }
 
+}
+
+
+
+@media screen and (max-width: 320px) {
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        color: white;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    /* Header */
+    .header {
+        background-color: orange;
+        padding: 10px 0;
+        text-align: center;
+        width: 100%;
+        padding-left: 10px;
+    }
+    
+    /* Logo */
+    .logo img {
+        height: 40px;
+        margin: 0;
+    }
+    
+    /* Contenido */
+    .contenido h1{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .contenido p{
+        font-size: 1rem;
+        text-align: center;
+        
+    }
+    
+    .contenido .fecha{
+        padding-top: 3rem;
+    }
+
+    .fecha span{
+        color: #f1691b;
+    }
+    
+    /* Datos */
+    .data h1{
+        text-align: center;
+        padding-top: 3rem;
+    }
+    
+    .data p{
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    /* Resaltado */
+    .resaltado {
+        position: relative;
+        color: orange;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    .countdown {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem; /* Reduce el tamaño de fuente para pantallas más pequeñas */
+        color: white;
+    }
+    
+    .countdown span {
+        display: inline-block;
+        margin: 0 8px; /* Reduce el espaciado horizontal entre los números */
+        font-family: 'Poppins', sans-serif;
+        padding: 1px;
+        padding-inline: 3px; /* Ajusta el espaciado interno horizontal */
+    }
+    
+    .cont-temporizador {
+       display: flex; 
+       justify-content: center;
+       margin-top: -15px; /* Ajusta el margen superior */
+       width: 310px;
+    }
+    
+    .cont-temporizador .bloque {
+        margin: 0px 2px; /* Reduce el espaciado horizontal entre los bloques */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cont-temporizador .bloque div {
+       display: flex; 
+       justify-content: center;
+       align-items: center;
+       background-color: rgb(80,80,80);
+       box-shadow: 0px 0px 6px 2px #727272 inset;
+       color: #ffffff;
+       font-size: 30px; /* Reduce el tamaño de fuente */
+       font-weight: bold;
+       width: 80px; /* Reduce el ancho del bloque */
+       height: 60px; /* Reduce la altura del bloque */
+       margin-bottom: 8px; /* Reduce el margen inferior */
+       border-radius: 5px;
+    }
+    
+    .cont-temporizador .bloque p {
+        font-size: 10px; /* Reduce el tamaño de fuente */
+        font-weight: bold;
+        color: #000;
+    }
+
+    .image {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100vh;
+        position: relative;
+    }
+    
+    .image img {
+        max-width: 300px; /* Ajusta el tamaño de la imagen */
+        height: auto;
+        box-shadow: 0px 10px 30px rgba(224, 224, 224, 0.3); /* Reduce el desenfoque */
+        margin-bottom: 10px; /* Reduce el margen inferior */
+    }
+    
+    /* Estilos para el botón */
+    .btn {
+        text-align: center;
+        margin-top: -570px; /* Ajusta el espaciado superior */
+    }
+    
+    .btn button {
+        background-color: orange;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        padding: 8px 16px; /* Reduce el padding */
+        font-size: 0.9rem; /* Reduce el tamaño de fuente */
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+        animation: moveButton 2s infinite alternate;
+        box-shadow: 0px 5px 10px rgba(238, 115, 14, 0.2); /* Reduce el tamaño de sombra */
+    }
+
+    .overlay {
+        background: rgba(0, 0, 0, .6);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+    }
+    
+    .overlay.active {
+        visibility: visible;
+    }
+    
+    .popup {
+        background: #e7a62e;
+        box-shadow: 0px 0px 3px rgba(255, 255, 255, 0.925);
+        border-radius: 15px;
+        padding: 15px;
+        text-align: center;
+        opacity: 0;
+        transition: .5s ease all;
+        transform: scale(0.9);
+        width: 300px;
+    }
+    
+    .btn-cerrar-popup {
+        font-size: 14px;
+        line-height: 14px;
+        display: block;
+        text-align: right;
+        color: #fff;
+        transition: .3s ease all;
+    }
+    
+    .btn-cerrar-popup:hover {
+        color: #000;
+    }
+    
+    .popup h3 {
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: -20px;
+        opacity: 0;
+    }
+    
+    .popup h4 {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 40px;
+        opacity: 0;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    .popup form .contenedor-inputs {
+        opacity: 0;
+    }
+    
+    .popup form .contenedor-inputs input {
+        width: 100%;
+        margin-bottom: 15px;
+        height: 42px;
+        line-height: 46px;
+        font-size: 16px;
+        text-align: center;
+        border-radius: 25px;
+        font-family: 'Poppins', sans-serif;
+        border: 2px solid #000;
+    }
+    
+    .popup form .btn-submit {
+        padding: 0 15px;
+        height: 35px;
+        line-height: 35px;
+        border: none;
+        color: #ffffff;
+        background: #000000;
+        font-family: 'Poppins', sans-serif;
+        text-transform: uppercase;
+        border-radius: 25px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: .3s ease all;
+    }
+    
+    .popup form .btn-submit:hover {
+        background: #f1691b;
+    }
+    
+    .popup.active {
+        opacity: 1;
+        transform: scale(1);
+    }
+    
+    .popup.active h3 {
+        animation: entradaTitulo .8s ease .6s forwards;
+    }
+    
+    .popup.active h4 {
+        animation: entradaSubTitulo .8s ease .8s forwards;
+    }
+    
+    .popup.active .contenedor-inputs {
+        animation: entradaInputs 1s ease 1s forwards;
+    }
+
+    .image2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto; /* Ajusta la altura automáticamente */
+        padding-top: 10px; /* Ajusta el espaciado superior para una mejor visualización */
+        position: relative;
+    }
+    
+    .image2 img {
+        max-width: 100%; /* La imagen ocupará todo el ancho disponible */
+        height: auto;
+        /* box-shadow: 0px 10px 50px rgba(255, 255, 255, 0.185); */
+        margin-top: 20px; /* Ajusta el margen superior para separar la imagen del contenido */
+    }
+
+    .subrayado {
+        text-decoration: underline #f1691b;
+    }
+    
+    /* Estilo para el recuadro con encabezado h2 */
+    .recuadro h2 {
+        margin-bottom: 5px; /* Reduzca el margen inferior para un mejor espaciado */
+        text-align: center;
+        font-size: 1.2rem; /* Reduzca el tamaño de la fuente para una mejor legibilidad */
+    }
+    
+    /* Estilo para la lista dentro del recuadro */
+    .recuadro ul {
+        margin-bottom: px; /* Reduzca el margen inferior para un mejor espaciado */
+        text-align: center;
+        
+    }
+    
+    .recuadro ul li {
+        margin-bottom: 5px; /* Reduzca el margen inferior de los elementos de la lista */
+    }
 }
