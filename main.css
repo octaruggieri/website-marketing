@@ -23,7 +23,7 @@ body {
 }
 
 .logo img {
-    height: 50px; /* Ajusta el tamaño del logo según tus necesidades */
+    height: 70px; /* Ajusta el tamaño del logo según tus necesidades */
     align-items: center;
     padding: 15px 10px;
     text-align: center;
@@ -637,7 +637,7 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
-    color: white;
+    color: rgb(253, 253, 253);
 }
 
 .countdown span {
@@ -665,7 +665,7 @@ body {
    display: flex; 
    justify-content: center;
    align-items: center;
-   background-color: rgb(80,80,80);
+   background-color: rgb(0, 0, 0);
    box-shadow: 0px 0px 6px 2px #727272 inset;
    color: #ffffff;
    font-size: 35px;
@@ -679,7 +679,7 @@ body {
 .cont-temporizador .bloque p{
     font-size: 11px;
     font-weight: bold;
-    color: #000;
+    color: #000000;
 }
 
 
@@ -822,6 +822,7 @@ body {
         font-size: 28px;
         width: 80px;
         height: 50px;
+        
     }
 
     .cont-temporizador .bloque p {
@@ -870,11 +871,11 @@ body {
     
     /* Contenido */
     .contenido h1 {
-        font-size: 1.4rem; /* Ajusta el tamaño del título */
+        font-size: 2rem; /* Ajusta el tamaño del título */
     }
     
     .contenido p {
-        font-size: 1.1rem; /* Ajusta el tamaño del párrafo */
+        font-size: 1.5rem; /* Ajusta el tamaño del párrafo */
     }
     
     /* Fecha en el contenido */
@@ -1171,9 +1172,9 @@ body {
    display: flex; 
    justify-content: center;
    align-items: center;
-   background-color: rgb(80,80,80);
+   background-color: rgb(255, 255, 255);
    box-shadow: 0px 0px 6px 2px #727272 inset;
-   color: #ffffff;
+   color: #000000;
    font-size: 25px; /* Reduzco el tamaño de fuente para pantallas pequeñas */
    font-weight: bold;
    width: 70px; /* Reduzco el ancho del bloque */
@@ -1264,10 +1265,10 @@ body {
     
     .countdown span {
         display: inline-block;
-        margin: 0 8px; /* Reduce el espaciado horizontal entre los números */
+        margin: 0 2px; /* Reduce el espaciado horizontal entre los números */
         font-family: 'Poppins', sans-serif;
         padding: 1px;
-        padding-inline: 3px; /* Ajusta el espaciado interno horizontal */
+        padding-inline: 1px; /* Ajusta el espaciado interno horizontal */
     }
     
     .cont-temporizador {
@@ -1288,9 +1289,9 @@ body {
        display: flex; 
        justify-content: center;
        align-items: center;
-       background-color: rgb(80,80,80);
+       background-color: rgb(255, 255, 255);
        box-shadow: 0px 0px 6px 2px #727272 inset;
-       color: #ffffff;
+       color: #000000;
        font-size: 30px; /* Reduce el tamaño de fuente */
        font-weight: bold;
        width: 80px; /* Reduce el ancho del bloque */
@@ -1488,3 +1489,45 @@ body {
         margin-bottom: 5px; /* Reduzca el margen inferior de los elementos de la lista */
     }
 }
+
+
+@media screen and (max-width: 360px){
+    .btn {
+        text-align: center;
+        margin-top: 10px; /* Ajusta el espaciado superior según tus preferencias */
+    }
+    
+    .btn button {
+        background-color: orange;
+        color: white;
+        border: none;
+        border-radius: 15px; /* Reduzca el radio del borde */
+        padding: 8px 15px; /* Ajusta el padding para adaptarlo a pantallas más pequeñas */
+        font-size: 0.9rem; /* Reduzca el tamaño del texto del botón */
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+        animation: moveButton 2s infinite alternate; 
+        box-shadow: 0px 6px 12px rgba(238, 115, 14, 0.2); 
+    }
+
+    .btn-fixed1 {
+        text-align: center;
+        padding-top: 10px; /* Ajusta el espaciado superior según tus preferencias */
+    }
+    
+    .btn-fixed1 button {
+        background-color: orange;
+        color: white;
+        border: none;
+        border-radius: 15px; /* Reduzca el radio del borde */
+        padding: 8px 15px; /* Ajusta el padding para adaptarlo a pantallas más pequeñas */
+        font-size: 0.2rem; /* Reduzca el tamaño del texto del botón */
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+        animation: pulse 5s infinite; /* Nueva animación "pulse" */
+        box-shadow: 0px 6px 12px rgba(238, 115, 14, 0.2); /* Reduzca la sombra */
+    }
+
+    
+}
+

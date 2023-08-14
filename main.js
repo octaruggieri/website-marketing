@@ -100,7 +100,7 @@ btnCerrarPopup2.addEventListener("click", function(){
 // setInterval(cargarSegundo, 1000);
 
 
-    const countdownDate = new Date("2023-08-25T00:00:00").getTime();
+    const countdownDate = new Date("2023-09-01T00:00:00").getTime();
 
     const countdown = setInterval(() => {
         const now = new Date().getTime();
