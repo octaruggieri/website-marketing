@@ -9,6 +9,11 @@
       src="https://kit.fontawesome.com/5e621d0145.js"
       crossorigin="anonymous"
     ></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
   </head>
   <body>
     <header class="header">
@@ -71,17 +76,16 @@
           ></a>
           <h3>RESERVÁ AHORA</h3>
           <h4>y recibe una masterclass gratuita.</h4>
-          <form action="">
+          <form id="suscripcion-form" action="">
             <div class="contenedor-inputs">
-              <input type="text" placeholder="Nombre y Apellido" />
-              <input type="email" placeholder="Correo" />
+              <input type="text" placeholder="Nombre y Apellido" name="nombre" />
+              <input type="email" placeholder="Correo" name="correo" />
             </div>
             <input type="submit" class="btn-submit" value="suscribirse" />
           </form>
         </div>
       </div>
     </div>
-    
     
     <div class="texto-adicional">
       <p>
@@ -119,7 +123,7 @@
         INSCRIBIRME AHORA
       </button>
     </div>
-
+    
     <div class="overlay2" id="overlay2">
       <div class="popup2" id="popup2">
         <a href="#" id="btn-cerrar-popup2" class="btn-cerrar-popup2"
@@ -127,15 +131,16 @@
         ></a>
         <h3>RESERVÁ AHORA</h3>
         <h4>y recibe una masterclass GRATIS.</h4>
-        <form action="">
+        <form id="suscripcion-form2" action="">
           <div class="contenedor-inputs2">
-            <input type="text" placeholder="Nombre y Apellido" />
-            <input type="email" placeholder="Correo" />
+            <input type="text" id="nombre2" placeholder="Nombre y Apellido" />
+            <input type="email" id="correo2" placeholder="Correo" />
           </div>
           <input type="submit" class="btn-submit2" value="suscribirse" />
         </form>
       </div>
     </div>
+    
 
   
 
@@ -194,6 +199,15 @@
       </p>
     </div>
 
+
+    <footer class="footer">
+      <div class="footer-content">
+        <p>© 2023 <a href="" target="_blank" rel="noopener noreferrer">OctaWebDesigns</a>. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+    
+    <script src="https://static.sendinblue.com/assets/js/libs/sib-2.0.0.min.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
