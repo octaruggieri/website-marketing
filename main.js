@@ -153,7 +153,7 @@ btnCerrarPopup2.addEventListener("click", function(){
           var correo = form.querySelector('[name="correo"]').value;
       
           // Lógica para enviar los datos a SendinBlue
-          var apiKey = "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";
+          var apiKey = "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";
           var listId = 18;
       
           var xhr = new XMLHttpRequest();
@@ -218,7 +218,7 @@ btnCerrarPopup2.addEventListener("click", function(){
             var correo2 = form2.querySelector('#correo2').value;
         
             // Lógica para enviar los datos a SendinBlue
-            var apiKey = "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";
+            var apiKey = "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";
             var listId = 18;
         
             var xhr = new XMLHttpRequest();
